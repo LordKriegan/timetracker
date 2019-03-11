@@ -5,6 +5,11 @@ To test server only: npm run startServerOnly
 
 To test full-stack: npm start
 
+API
+--------------
+    POST: "/api/parsexlsx?sheet=SHEETNUM"
+        To parse an xlsx file, make a post request to this url with the file in the body and the sheet number to parse. default sheet number is 1.
+
 TODO LIST
 ----------
 
@@ -27,9 +32,3 @@ Back End:
         * Create api route to upload and parse xlsx files - DONE
     Nice to Haves:
         * Choose which sheet to parse - DONE (pass query parameter sheet with number)
-
-
-API: 
-
-    POST: "/api/parsexlsx?sheet=SHEETNUM"
-        To parse an xlsx file, make a post request to this url with the file in the body and the sheet number to parse. default sheet number is 1.
