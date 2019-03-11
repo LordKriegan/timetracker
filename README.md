@@ -16,14 +16,17 @@ TODO LIST
 Front end:
 
     MVP:
-        * Upload file to server
+        * Upload file to server - DONE
+        * Pass data from upload page to timetracker page - DONE
         * Display list of activitys
         * Create timer
         * Change color of activities as they are passed
+        * Find a nicer theme. Current color scheme = ugh.
     Nice to haves:
         * Rearrange activities
         * Delete (maybe a checkbox to skip it? that way it can be unchecked if they change their mind) activities
         * play ding sound as activity is passed
+        * Nicer navbar
 
 Back End:
 
