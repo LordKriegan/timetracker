@@ -2,7 +2,8 @@ Running code
 ------------
 To test server only: npm run startServerOnly
     go to localhost:3001 and either click on the green box or drag an xlsx file into it and hit submit, check console for response.
-to test full-stack: npm start
+
+To test full-stack: npm start
 
 TODO LIST
 ----------
