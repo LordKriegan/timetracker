@@ -18,7 +18,7 @@ Front end:
     MVP:
         * Upload file to server - DONE
         * Pass data from upload page to timetracker page - DONE
-        * Display list of activitys
+        * Display list of activitys - DONE
         * Create timer
         * Change color of activities as they are passed
         * Find a nicer theme. Current color scheme = ugh.
