@@ -1,5 +1,14 @@
-TODO list:
-Front end
+Running code
+------------
+To test server only: npm run startServerOnly
+    go to localhost:3001 and either click on the green box or drag an xlsx file into it and hit submit, check console for response.
+to test full-stack: npm start
+
+TODO LIST
+----------
+
+Front end:
+
     MVP:
         * Upload file to server
         * Display list of activitys
@@ -20,10 +29,6 @@ Back End:
 
 
 API: 
+
     POST: "/api/parsexlsx?sheet=SHEETNUM"
         To parse an xlsx file, make a post request to this url with the file in the body and the sheet number to parse. default sheet number is 1.
-
-
-To test server only: npm run startServerOnly
-    go to localhost:3001 and either click on the green box or drag an xlsx file into it and hit submit, check console for response.
-to test full-stack: npm start
