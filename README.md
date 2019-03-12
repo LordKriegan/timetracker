@@ -27,6 +27,7 @@ Front end:
         * Delete (maybe a checkbox to skip it? that way it can be unchecked if they change their mind) activities - DONE
         * play ding sound as activity is passed
         * Nicer navbar
+        * ETA to end of class
 
 Back End:
 
