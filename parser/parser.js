@@ -8,10 +8,11 @@ excel2json = (file, sheets, cb) => {
                 thus ive sliced them out of the array and mapped over the rest
             */
             cb(data.slice(2).map((elem) => {
+                    let time = (parseInt(elem[3].split(":")[0]) * 60) + parseInt(elem[3].split(":")[1])
                     return {
                         activityNum: elem[1],
                         activityDesc: elem[2],
-                        activityTime: elem[3],
+                        activityTime: time,
                         activityPriority: elem[4].toLowerCase() || 'normal'
                         }
                     }

@@ -37,7 +37,7 @@ class Timetracker extends Component {
                                     {elem.activityNum}
                                 </div>
                                 <div className="col-sm-1 text-center">
-                                    {elem.activityTime}
+                                    {elem.activityTime + "m"}
                                 </div>
                                 <div className="col-sm-7 text-center">
                                     {elem.activityDesc}
