@@ -23,8 +23,8 @@ Front end:
         * Change color of activities as they are passed
         * Find a nicer theme. Current color scheme = ugh.
     Nice to haves:
-        * Rearrange activities
-        * Delete (maybe a checkbox to skip it? that way it can be unchecked if they change their mind) activities
+        * Rearrange activities - DONE
+        * Delete (maybe a checkbox to skip it? that way it can be unchecked if they change their mind) activities - DONE
         * play ding sound as activity is passed
         * Nicer navbar
 
