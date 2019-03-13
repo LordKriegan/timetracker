@@ -13,7 +13,8 @@ excel2json = (file, sheets, cb) => {
                         activityDesc: elem[2],
                         activityTime: (parseInt(elem[3].split(":")[0]) * 60) + parseInt(elem[3].split(":")[1]),
                         activityPriority: elem[4].toLowerCase() || 'normal',
-                        skipActivity: false
+                        skipActivity: false,
+                        completed: false
                         }
                     }
                 )

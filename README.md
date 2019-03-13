@@ -19,15 +19,15 @@ Front end:
         * Upload file to server - DONE
         * Pass data from upload page to timetracker page - DONE
         * Display list of activitys - DONE
-        * Create timer
-        * Change color of activities as they are passed
+        * Create timer - STARTED (check play button in Timetracker component)
+        * Change color of activities as they are passed - DONE
         * Find a nicer theme. Current color scheme = ugh.
     Nice to haves:
         * Rearrange activities - DONE
         * Delete (maybe a checkbox to skip it? that way it can be unchecked if they change their mind) activities - DONE
         * play ding sound as activity is passed
         * Nicer navbar
-        * ETA to end of class
+        * ETA to end of class - DONE
 
 Back End:
 

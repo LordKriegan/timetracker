@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import { FaArrowRight, FaAngleDoubleUp, FaAngleDoubleDown, FaCheck, FaBan } from 'react-icons/fa';
+
+import {Table, Controlbar} from '../components';
 
 class Timetracker extends Component {
     state = {
         data: "",
-        startActivity: 0
+        startActivity: 0,
+        timeLeft: 0,
+        etc: "00:00"
     }
     componentDidMount() {
         //check to see if location.state has any data, if not go back to upload page
@@ -37,11 +40,23 @@ class Timetracker extends Component {
             startActivity: id
         })
     }
+
+    startButton = () => {
+        let data = this.state.data.filter((elem) => !elem.skipActivity)
+        let time = 0;
+        let now = new Date();
+        data.forEach((elem) => time += elem.activityTime)
+        this.setState({
+            etc: new Date(now.getTime() + (time*60000))
+        })
+
+    }
+
     render() {
         return (
             <>
+                <Controlbar startButton={this.startButton} timeLeft={this.state.timeLeft} etc={this.state.etc} />
                 <div className="row">
-                    
                     <div className="col-sm-1 offset-sm-1 text-center">
                         Number
                     </div>
@@ -54,51 +69,9 @@ class Timetracker extends Component {
                     <div className="col-sm-2 text-center">
                         Priority
                     </div>
-                    <div className="col-sm-1 text-center">
-                        Skip
-                    </div>
-                    <div className="col-sm-1 text-center">
-                        Move Up
-                    </div>
-                    <div className="col-sm-1 text-center">
-                        Move Down
-                    </div>
                 </div>
                 <hr />
-                {
-                    (this.state.data)
-                        ? this.state.data.map((elem, id) => {
-                            return (
-                                <div className="row" onClick={() => this.changeStart(id)}>
-                                    <div className="col-sm-1 text-center">
-                                        <span className="icon" >{(id === this.state.startActivity) ? <FaArrowRight /> : ""}</span>
-                                    </div>
-                                    <div className="col-sm-1 text-center">
-                                        {elem.activityNum}
-                                    </div>
-                                    <div className="col-sm-1 text-center">
-                                        {elem.activityTime + "m"}
-                                    </div>
-                                    <div className="col-sm-4 text-center">
-                                        {elem.activityDesc}
-                                    </div>
-                                    <div className="col-sm-2 text-center">
-                                        {elem.activityPriority}
-                                    </div>
-                                    <div className="col-sm-1 text-center">
-                                        <span className="icon" onClick={() => this.skipActivity(id)}>{(elem.skipActivity) ? <FaCheck /> : <FaBan />}</span>
-                                    </div>
-                                    <div className="col-sm-1 text-center">
-                                        <FaAngleDoubleUp onClick={() => this.moveActivity(id, id - 1)} className="icon" />
-                                    </div>
-                                    <div className="col-sm-1 text-center">
-                                        <FaAngleDoubleDown onClick={() => this.moveActivity(id, id + 1)} className="icon" />
-                                    </div>
-                                </div>
-                            )
-                        })
-                        : ""
-                }
+                <Table data={this.state.data} startActivity={this.state.startActivity} moveActivity={this.moveActivity} changeStart={this.changeStart} skipActivity={this.skipActivity} />
             </>
         )
     }
