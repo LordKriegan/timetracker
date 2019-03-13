@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { Table, Controlbar } from '../components';
 
+import ding from '../assets/sounds/ding.mp3';
+
 class Timetracker extends Component {
     state = {
         data: "",
@@ -10,6 +12,9 @@ class Timetracker extends Component {
         etc: "00:00",
         classStarted: false
     }
+
+    dingSound = new Audio(ding);
+
     componentDidMount() {
         //check to see if location.state has any data, if not go back to upload page
         if (!this.props.location.state) this.props.history.push("/");
@@ -112,7 +117,7 @@ class Timetracker extends Component {
     moveNextActivity = () => {
         //dont run this code if class isnt running
         if (!this.state.classStarted) return;
-
+        this.dingSound.play();
         let newData = this.state.data.slice();
         newData[this.state.activityMarker].completed = true;
         this.setState({

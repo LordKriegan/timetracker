@@ -25,7 +25,7 @@ Front end:
     Nice to haves:
         * Rearrange activities - DONE
         * Delete (maybe a checkbox to skip it? that way it can be unchecked if they change their mind) activities - DONE
-        * play ding sound as activity is passed
+        * play ding sound as activity is passed DONE
         * Skip activity button in controlbar - DONE
         * Nicer navbar
         * ETA to end of class - DONE
