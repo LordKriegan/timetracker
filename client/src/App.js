@@ -11,7 +11,7 @@ class App extends Component {
       <Router>
         <>
           <Particle id="particles" />
-          <h1 className="text-center font-italic">Time Tracker</h1>
+          <h1 className="text-center font-italic">TimeTrackM8</h1>
           <hr />
           <div className="container">
             <Switch>
