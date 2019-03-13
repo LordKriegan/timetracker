@@ -1,17 +1,20 @@
 import React from 'react';
-import {MdPlayArrow, MdStop} from 'react-icons/md'
+import {MdPlayArrow, MdStop, MdSkipNext } from 'react-icons/md'
 function Controlbar(props) {
+    let timeLeft =  new Date(null);
+    timeLeft.setSeconds(props.timeLeft);
     return (
         <div className="row">
             <div className="col-sm-3 text-center">
                 <p>Time left in Activity:</p>
-                <p>{props.timeLeft}</p>
+                <p>{timeLeft.toISOString().substr(11, 8)}</p>
             </div>
 
             <div className="col-sm-4 offset-sm-1 text-center">
                 <div className="btn-group">
                     <button onClick={props.startButton} className="btn btn-default"><MdPlayArrow /></button>
-                    <button className="btn btn-default"><MdStop /></button>
+                    <button onClick={props.stopButton} className="btn btn-default"><MdStop /></button>
+                    <button onClick={props.skipButton} className="btn btn-default"><MdSkipNext /></button>
                 </div>
             </div>
 

@@ -10,7 +10,7 @@ function Table(props) {
                     return (
                         <div key={id} className="row" style={{backgroundColor: (elem.completed) ? "grey" : ""}}>
                             <div className="col-sm-1 text-center" onClick={() => props.changeStart(id)}>
-                                <span className="icon" >{(id === props.startActivity) ? <FaArrowRight /> : ""}</span>
+                                <span className="icon" >{(id === props.activityMarker) ? <FaArrowRight /> : ""}</span>
                             </div>
                             <div className="col-sm-1 text-center" onClick={() => props.changeStart(id)}>
                                 {elem.activityNum}
