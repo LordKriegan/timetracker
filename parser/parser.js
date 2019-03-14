@@ -32,12 +32,11 @@
 
 const parseXlsx = require('convert-excel-to-json');
 
-const excel2json = (file, sheetNum) => {
+const excel2json = (file) => {
 
     const data = parseXlsx({ sourceFile: file });
     let newData = {}
     for (key in data) {
-        console.log(data[key])
         newData[key] = data[key].slice(2).map((elem) => {
             return {
                 activityNum: elem['B'],

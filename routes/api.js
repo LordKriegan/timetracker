@@ -6,7 +6,7 @@ router.post("/parsexlsx", (req, res) => {
     file
         .mv(fileName)
         .then((response) => {
-            res.json(parser(fileName, req.query.sheet || 1))
+            res.json(parser(fileName))
         }).catch((error) => {
             console.error(error);
             res.status(500).json({
