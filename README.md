@@ -5,6 +5,16 @@ To test server only: npm run startServerOnly
 
 To test full-stack: npm start
 
+
+Using the app
+-------------
+1) Either drag/drop a timetracker xlsx file into the box on the page, or click on it to bring up the file selector. 
+2) Hit submit to get a list of possible sheets.
+3) Select a sheet and click Go!
+4) The buttons on the right of the activities can be used to either mark an activity to be skipped, or move them up or down to rearrange as your class is needed. 
+5) The buttons at the top can be used to start the timer (play button), stop a running timer (stop button), or move on to the next activity if you finish early (skip button). 
+6) To the left of the control bar is the time remaining in the activity, and to the right will be the expected end of class.
+
 API
 --------------
     POST: "/api/parsexlsx"
@@ -21,6 +31,8 @@ Front end:
         * Display list of activitys - DONE
         * Create timer - DONE
         * Change color of activities as they are passed - DONE
+        * Update uploader to reflect a chosen file
+        * Add a landing page with instructions.
         * Find a nicer theme. Current color scheme = ugh.
     Nice to haves:
         * Rearrange activities - DONE
