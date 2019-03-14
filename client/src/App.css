@@ -40,8 +40,8 @@ input[type="file"]::-webkit-file-upload-button {
     font-size: 40px;
 }
 
-#sheetNum {
-    width: 100%;
+#submitBtn {
+    margin-top: 10px;
 }
 
 /* Particles */

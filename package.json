@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "engines": {
-    "node": "10.13.0"
-  },
   "scripts": {
     "startServerOnly": "cross-env NODE_ENV=development nodemon server.js",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -21,7 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-    "excel": "^1.0.0",
+    "convert-excel-to-json": "^1.6.1",
     "express": "^4.16.4",
     "express-fileupload": "^1.1.2-alpha.1",
     "if-env": "^1.0.4"
