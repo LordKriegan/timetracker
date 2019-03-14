@@ -1,8 +1,8 @@
-import Particle from './Particle';
-import Table from './Table';
-import Controlbar from './Controlbar';
-import Uploader from './Uploader';
-import Sheetlist from './Sheetlist';
+import Particle from './particle';
+import Table from './table';
+import Controlbar from './controlbar';
+import Uploader from './uploader';
+import Sheetlist from './sheetlist';
 
 export {
     Particle,
