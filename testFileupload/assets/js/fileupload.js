@@ -15,7 +15,7 @@ $(document).ready(() => {
         data.append("file", $("#uploadFile")[0].files[0]);
         $.ajax({
             method: "POST",
-            url: "/api/parsexlsx",
+            url: "/api/parsexlsx?sheet=2",
             data: data,
             processData: false,
             contentType: false
