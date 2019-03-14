@@ -1,5 +1,5 @@
-import Upload from './Upload';
-import Timetracker from './Timetracker';
+import Upload from './upload';
+import Timetracker from './timetracker';
 
 export {
     Upload,
