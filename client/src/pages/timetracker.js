@@ -72,6 +72,8 @@ class Timetracker extends Component {
     }
 
     startButton = () => {
+        //dont run if class has already started
+        if (this.state.classStarted) return;
         //end if all activitys are done
         if (this.state.activityMarker === this.state.data.length) {
             this.stopButton();
