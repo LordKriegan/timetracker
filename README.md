@@ -7,8 +7,8 @@ To test full-stack: npm start
 
 API
 --------------
-    POST: "/api/parsexlsx?sheet=SHEETNUM"
-        To parse an xlsx file, make a post request to this url with the file in the body and the sheet number to parse. default sheet number is 1.
+    POST: "/api/parsexlsx"
+        To parse an xlsx file, make a post request to this url with the file in the body.
 
 TODO LIST
 ----------
