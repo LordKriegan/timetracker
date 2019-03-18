@@ -6,4 +6,7 @@ const parser = require('./parser');
 //     else console.log(data);
 // });
 
-console.log(parser('./timetracker.xlsx', 1));
+const file = process.argv[2];
+console.log(file);
+
+console.log(parser(file));
