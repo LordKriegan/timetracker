@@ -27,7 +27,9 @@ function isValidDate(date) {
 function getActivityTime(time) {
     if (isValidDate(time)) {
         console.log("is date object")
-        return time.getHours(time.setHours(time.getHours() - 23)) * 60 + time.getMinutes();
+        console.log(time.toLocaleString())
+        const timeDiff = (process.env.NODE_ENV === "development") ? 23 : 24
+        return time.getHours(time.setHours(time.getHours() - timeDiff)) * 60 + time.getMinutes();
     } else {
         console.log("is a string")
         return (typeof time === 'string') ? (parseInt(time.split(":")[0]) * 60) + parseInt(time.split(":")[1]) : 0
