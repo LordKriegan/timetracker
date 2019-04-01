@@ -5,7 +5,6 @@ const parser = require('./parser');
 //     if (err) console.error(err);
 //     else console.log(data);
 // });
-
 const file = process.argv[2];
 console.log(file);
 
