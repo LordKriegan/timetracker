@@ -74,6 +74,9 @@ class Timetracker extends Component {
     startButton = () => {
         //dont run if class has already started
         if (this.state.classStarted) return;
+        this.startActivity();
+    }
+    startActivity = () => {
         //end if all activitys are done
         if (this.state.activityMarker === this.state.data.length) {
             this.stopButton();
@@ -81,11 +84,14 @@ class Timetracker extends Component {
             return;
         }
         //move onto next activity if this one is to be skipped
+        console.log(this.state.data[this.state.activityMarker])
         if (this.state.data[this.state.activityMarker].skipActivity ||
             this.state.data[this.state.activityMarker].completed) {
             this.setState({
                 activityMarker: (this.state.activityMarker + 1)
-            }, () => this.startButton());
+            }, () => {
+                this.startActivity()
+            });
             return;
         }
         //clear out previous interval
@@ -115,7 +121,6 @@ class Timetracker extends Component {
             }, 1000)
         })
     }
-
     moveNextActivity = () => {
         //dont run this code if class isnt running
         if (!this.state.classStarted) return;
@@ -128,7 +133,7 @@ class Timetracker extends Component {
             this.setState({
                 activityMarker: (this.state.activityMarker + 1)
             }, () => { //after state is set start next activity
-                this.startButton();
+                this.startActivity();
             })
         })
     }
@@ -143,23 +148,23 @@ class Timetracker extends Component {
     render() {
         return (
             <>
-                <Controlbar skipButton={this.moveNextActivity} startButton={this.startButton} stopButton={this.stopButton} timeLeft={this.state.timeLeft} etc={this.state.etc} />
-                <div className="row">
-                    <div className="col-sm-1 offset-sm-1 text-center">
-                        Number
+            <Controlbar skipButton={this.moveNextActivity} startButton={this.startButton} stopButton={this.stopButton} timeLeft={this.state.timeLeft} etc={this.state.etc} />
+            <div className="row">
+                <div className="col-sm-1 offset-sm-1 text-center">
+                    Number
                     </div>
-                    <div className="col-sm-1 text-center">
-                        Length
+                <div className="col-sm-1 text-center">
+                    Length
                     </div>
-                    <div className="col-sm-4 text-center">
-                        Description
+                <div className="col-sm-4 text-center">
+                    Description
                     </div>
-                    <div className="col-sm-2 text-center">
-                        Priority
+                <div className="col-sm-2 text-center">
+                    Priority
                     </div>
-                </div>
-                <hr />
-                <Table data={this.state.data} activityMarker={this.state.activityMarker} moveActivity={this.moveActivity} changeStart={this.changeStart} skipActivity={this.skipActivity} />
+            </div>
+            <hr />
+            <Table data={this.state.data} activityMarker={this.state.activityMarker} moveActivity={this.moveActivity} changeStart={this.changeStart} skipActivity={this.skipActivity} />
             </>
         )
     }
