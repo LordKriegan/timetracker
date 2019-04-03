@@ -31,7 +31,7 @@ Front end:
         * Display list of activitys - DONE
         * Create timer - DONE
         * Change color of activities as they are passed - DONE
-        * Update uploader to reflect a chosen file
+        * Update uploader to reflect a chosen file - DONE
         * Add a landing page with instructions.
         * Find a nicer theme. Current color scheme = ugh.
     Nice to haves:
@@ -48,4 +48,4 @@ Back End:
         * Parse xlsx files - DONE
         * Create api route to upload and parse xlsx files - DONE
     Nice to Haves:
-        * Choose which sheet to parse - DONE (pass query parameter sheet with number)
+        * Choose which sheet to parse - DONE 
