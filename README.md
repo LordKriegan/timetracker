@@ -1,5 +1,7 @@
 Running code
 ------------
+First, make a .env with a variable called TIMEDIFF. The excel-to-json package seems to parse date objects differently on different platforms. So far, on windows and mac it seems that the dates being returned are off by 23 hours, and on linux 24. For the purposes of our timetrackers that means that an activity of 00:12 would be parsed as 23:12 on windows and mac and 24:12 on linux. So for windows/mac set TIMEDIFF to 23 and linux set it to 24. 
+
 To test server only: npm run startServerOnly
     go to localhost:3001 and either click on the green box or drag an xlsx file into it and hit submit, check console for response.
 
