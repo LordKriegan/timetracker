@@ -27,13 +27,10 @@ function isValidDate(date) {
 function getActivityTime(time) {
     if (isValidDate(time)) {
         console.log("is date object")
-        console.log(time.toLocaleString())
-        const timeDiff = 23;
-        // const timeDiff = (process.env.NODE_ENV === "development") ? 23 : 24
-        // // const timeDiff = (process.platform === "win32") ? 23 : 24
-        console.log(process.platform)        
-        return time.getHours(time.setHours(time.getHours() - timeDiff)) * 60 + time.getMinutes();
+        console.log(time.toLocaleString())       
+        return time.getHours(time.setHours(time.getHours() - parseInt(process.env.TIMEDIFF))) * 60 + time.getMinutes();
     } else {
+        //potential regex match: /(^[0-5]?[0-9]):([0-5]?[0-9])/
         console.log("is a string")
         return (typeof time === 'string') ? (parseInt(time.split(":")[0]) * 60) + parseInt(time.split(":")[1]) : 0
     }
